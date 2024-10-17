@@ -19,7 +19,7 @@ const AppRouter = () => {
          <Route path="/contact" element={<Contact />} />
          <Route path="/project" element={<Work />} />
          <Route path="/skill" element={<Skill />} />
-         <Route path="*" element={<NotFound />} />
+         <Route path="*" element={<Home />} />
        </Routes>
      <Footer/>
      </Router>

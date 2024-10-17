@@ -31,7 +31,7 @@ const Navbar = () => {
         animate={{ scale: 1 }}           // Logo grows to normal size (scale 1)
         transition={{ type: 'spring', stiffness: 100, damping: 10, delay: 0.3 }} // Logo animation delay
       >
-        MyLogo
+        Suhaib
       </motion.div>
 
       {/* Navigation links */}
