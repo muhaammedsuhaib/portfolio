@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, Link, Navigate } from "react-router-dom";
 import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
@@ -19,7 +19,7 @@ const AppRouter = () => {
          <Route path="/contact" element={<Contact />} />
          <Route path="/project" element={<Work />} />
          <Route path="/skill" element={<Skill />} />
-         <Route path="*" element={<Home />} />
+         <Route path="*" element={<Navigate to='/' />} />
        </Routes>
      <Footer/>
      </Router>
