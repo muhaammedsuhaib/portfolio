@@ -1,93 +1,80 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import framer-motion for animations
-import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa'; // Importing icons from react-icons
+import { motion } from 'framer-motion';
+import { FaGithub, FaInstagram, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import colors from '../utils/theam';
 
 const Home = () => {
+  const socialLinks = [
+    {
+      href: "https://github.com/muhaammedsuhaib",
+      icon: <FaGithub />,
+      delay: 0.6,
+    },
+    {
+      href: "https://www.linkedin.com/in/muhammedsuhaib/",
+      icon: <FaLinkedin />,
+      delay: 0.7,
+    },
+    {
+      href: "https://www.instagram.com/suhaii.bb/",
+      icon: <FaInstagram />,
+      delay: 0.8,
+    },
+    {
+      href: "https://x.com/MuhaammedSuhaib",
+      icon: <FaTwitter />,
+      delay: 0.9,
+    },
+  ];
+
   return (
-    <motion.div 
-      className="w-full h-screen bg-gray-800 flex flex-col justify-center items-center text-center text-white p-4"
-      initial={{ opacity: 0, y: 20 }} // Initial animation: starting below and invisible
-      animate={{ opacity: 1, y: 0 }}  // Final animation: fully visible and in place
-      transition={{ duration: 1, ease: "easeOut" }} // Smooth transition
-    >
-      {/* Welcome Section */}
+    <div className={`w-full h-screen flex flex-col justify-center items-center ${colors.background} text-center p-6`}>
       <motion.h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4"
-        initial={{ opacity: 0, scale: 0.8 }} // Initial scale and opacity
-        animate={{ opacity: 1, scale: 1 }} // Animate to normal scale and full opacity
-        transition={{ duration: 0.6, delay: 0.5, ease: "easeInOut" }}
-        whileHover={{ scale: 1.1, color: "#FFD700" }} // Hover animation: scale up and change color
+        className={`text-5xl md:text-6xl font-bold mb-6 ${colors.textPrimary}`}
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: 'easeInOut' }}
       >
         Hello, I'm Suhaib
       </motion.h1>
 
       <motion.p
-        className="text-xl md:text-2xl mb-4"
-        initial={{ opacity: 0, x: -50 }} // Initial state: slightly to the left
-        animate={{ opacity: 1, x: 0 }} // Final state: back to original position
-        transition={{ duration: 0.6, delay: 1, ease: "easeInOut" }}
-        whileHover={{ scale: 1.05, color: "#FFD700" }} // Hover effect: scale slightly and change color
-      >
-        I'm a Software Developer
-      </motion.p>
-
-      <motion.p
-        className="text-lg md:text-xl mb-6"
-        initial={{ opacity: 0, x: 50 }} // Initial state: slightly to the right
-        animate={{ opacity: 1, x: 0 }} // Final state: back to original position
-        transition={{ duration: 0.6, delay: 1.5, ease: "easeInOut" }}
-        whileHover={{ scale: 1.05, color: "#FFD700" }} // Hover effect: scale and color change
-      >
-        Specializing in Website Development
-      </motion.p>
-
-      {/* Social Media Icons */}
-      <motion.div
-        className="flex space-x-8"
+        className={`text-lg md:text-xl mb-4 ${colors.textSecondary}`}
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 2, ease: "easeInOut" }}
+        transition={{ duration: 1, delay: 0.3 }}
       >
-        {/* Github Icon */}
-        <motion.a
-          href="https://github.com/your-username"
-          target="_blank"
-          className="text-3xl text-gray-400 hover:text-yellow-500"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 2.5 }}
-          whileHover={{ scale: 1.2 }} // Hover effect: scale up on hover
-        >
-          <FaGithub />
-        </motion.a>
+        A Software Developer Specializing in Web Development
+      </motion.p>
 
-        {/* LinkedIn Icon */}
-        <motion.a
-          href="https://linkedin.com/in/your-username"
-          target="_blank"
-          className="text-3xl text-gray-400 hover:text-yellow-500"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 3 }}
-          whileHover={{ scale: 1.2 }} // Hover effect: scale up on hover
-        >
-          <FaLinkedin />
-        </motion.a>
+      <motion.button
+        className={`px-8 py-3 rounded-full font-medium transition-colors duration-300 ${colors.button}`}
+        initial={{ scale: 0 }}
+        animate={{ scale: 1 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        whileHover={{ scale: 1.05 }}
+      >
+        Get in Touch
+      </motion.button>
 
-        {/* Twitter Icon */}
-        <motion.a
-          href="https://twitter.com/your-username"
-          target="_blank"
-          className="text-3xl text-gray-400 hover:text-yellow-500"
-          initial={{ opacity: 0, scale: 0 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 3.5 }}
-          whileHover={{ scale: 1.2 }} // Hover effect: scale up on hover
-        >
-          <FaTwitter />
-        </motion.a>
-      </motion.div>
-    </motion.div>
+      <div className="flex space-x-6 mt-8">
+        {socialLinks.map(({ href, icon, delay }, index) => (
+          <motion.a
+            key={index}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-2xl ${colors.textSecondary} hover:${colors.accent}`}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay }}
+            whileHover={{ scale: 1.1 }}
+          >
+            {icon}
+          </motion.a>
+        ))}
+      </div>
+    </div>
   );
 };
 

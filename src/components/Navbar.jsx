@@ -1,57 +1,88 @@
-import { motion } from 'framer-motion';
-import { FaHome, FaInfoCircle, FaServicestack, FaPhoneAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { motion } from "framer-motion";
+import {
+  FaHome,
+  FaInfoCircle,
+  FaServicestack,
+  FaPhoneAlt,
+} from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+import colors from "../utils/theam";
 
-// Navigation model (array of objects)
 const navItems = [
-  { name: 'Home', path: '/', icon: <FaHome className="text-2xl" /> },
-  { name: 'About', path: '/about', icon: <FaInfoCircle className="text-2xl" /> },
-  { name: 'Services', path: '/services', icon: <FaServicestack className="text-2xl" /> },
-  { name: 'Contact', path: '/contact', icon: <FaPhoneAlt className="text-2xl" /> }
+  { name: "Home", path: "/", icon: <FaHome size={18} /> },
+  { name: "About", path: "/about", icon: <FaInfoCircle size={18} /> },
+  { name: "Services", path: "/services", icon: <FaServicestack size={18} /> },
+  { name: "Contact", path: "/contact", icon: <FaPhoneAlt size={18} /> },
 ];
 
 const Navbar = () => {
-  // Animation variants for the nav links
   const navLinkVariants = {
-    hidden: { opacity: 0, y: -20 }, // Hidden state for links (invisible and slightly above)
-    visible: { opacity: 1, y: 0 },  // Visible state (fully opaque and at original position)
+    hidden: { opacity: 0, y: -10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const getActiveClassName = (isActive) => {
+    return isActive ? ` ${colors.accent} font-semibold` : "";
   };
 
   return (
     <motion.nav
-      className="bg-gray-800 text-white p-6 flex justify-between items-center shadow-lg fixed w-full top-0 left-0 z-50"
-      initial={{ x: '-100%', opacity: 0 }} // Navbar initial hidden state (slides in from left)
-      animate={{ x: '0', opacity: 1 }}    // Navbar visible state (fully visible)
-      transition={{ type: 'spring', stiffness: 80, damping: 20, duration: 1 }} // Transition settings
+      className={`bg-transparent backdrop-blur-md p-2 flex justify-between items-center fixed w-full top-0 left-0 z-50`}
+      initial={{ y: -100, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8 }}
     >
-      {/* Logo animation */}
       <motion.div
-        className="logo text-3xl font-extrabold text-yellow-400"
-        initial={{ scale: 0 }}           // Logo starts small (scale 0)
-        animate={{ scale: 1 }}           // Logo grows to normal size (scale 1)
-        transition={{ type: 'spring', stiffness: 100, damping: 10, delay: 0.3 }} // Logo animation delay
+        className={`logo text-xl font-bold ${colors.accent} hover:underline`}
+        initial={{ scale: 0, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ type: "spring", stiffness: 100, damping: 10, delay: 0.2 }}
+        whileHover={{
+          scale: 1.1,
+          textShadow: `0px 0px 15px ${colors.accent}`,
+          transition: { type: "spring", stiffness: 100, damping: 20 },
+        }}
       >
-        Suhaib
+        <NavLink to={"/"}>Suhaib</NavLink>
       </motion.div>
 
-      {/* Navigation links */}
       <motion.ul
-        className="flex space-x-8"
+        className={`flex space-x-6`}
         initial="hidden"
         animate="visible"
-        transition={{ staggerChildren: 0.2 }} // Stagger the children for smooth sequence
+        transition={{ staggerChildren: 0.2, delayChildren: 0.2 }}
       >
         {navItems.map((item, index) => (
           <motion.li
             key={index}
-            variants={navLinkVariants}  // Apply the variants to each link
-            whileHover={{ scale: 1.1, color: '#FFD700' }} // Hover animation with scaling and color change
-            transition={{ type: 'spring', stiffness: 300, damping: 20 }}
+            variants={navLinkVariants}
+            className="relative"
           >
-            <Link to={item.path} className="flex items-center space-x-2">
-              {item.icon} {/* Dynamic icon */}
-              <span className="hidden md:inline">{item.name}</span> {/* Text for larger screens */}
-            </Link>
+            <NavLink
+              to={item.path}
+              className={({ isActive }) =>
+                `flex items-center text-sm space-x-2 ${
+                  colors.textHover
+                } ${getActiveClassName(isActive)} hover:underline`
+              }
+              aria-label={item.name}
+            >
+              {item.icon}
+              <span className="hidden md:inline">{item.name}</span>
+              <motion.span
+                className="absolute inset-0 bg-gradient-to-r from-transparent to-white opacity-20 rounded-md"
+                initial={{ width: 0 }}
+                whileHover={{ width: "100%" }}
+                transition={{ type: "spring", stiffness: 300, damping: 30 }}
+              />
+            </NavLink>
+
+            <motion.div
+              className="absolute bottom-0 left-0 w-full h-0.5 bg-blue-500"
+              initial={{ width: "0%" }}
+              whileHover={{ width: "100%" }}
+              transition={{ type: "spring", stiffness: 200, damping: 25 }}
+            />
           </motion.li>
         ))}
       </motion.ul>
