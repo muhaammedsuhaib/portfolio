@@ -27,7 +27,7 @@ const Navbar = () => {
 
   return (
     <motion.nav
-      className={`bg-transparent backdrop-blur-md p-2 flex justify-between items-center fixed w-full top-0 left-0 z-50`}
+      className={`bg-transparent backdrop-blur-md p-3 flex justify-between items-center fixed w-full top-0 left-0 z-50`}
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 80, damping: 20, duration: 0.8 }}

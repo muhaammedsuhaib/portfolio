@@ -14,7 +14,7 @@ const Footer = () => {
 
   return (
     <motion.footer 
-      className={`bg-transparent backdrop-blur-md p-2 fixed w-full bottom-0 left-0 right-0 z-50`}
+      className={`bg-transparent backdrop-blur-md p-4 fixed w-full bottom-0 left-0 right-0 z-50`}
       initial="hidden"
       animate="visible"
       transition={{ type: 'spring', stiffness: 80, damping: 20, duration: 1 }}
