@@ -1,22 +1,22 @@
 
 const colors = {
-    background: 'bg-white',
-    textPrimary: 'text-gray-900',
-    textSecondary: 'text-gray-700',
-    accent: 'text-teal-500',
-    button: 'bg-teal-500 text-white hover:bg-teal-600',
-    navbarText: 'text-white',
-    textHover: 'hover:text-teal-500',
+    // background: 'bg-white',
+    // textPrimary: 'text-gray-900',
+    // textSecondary: 'text-gray-700',
+    // accent: 'text-teal-500',
+    // button: 'bg-teal-500 text-white hover:bg-teal-600',
+    // navbarText: 'text-white',
+    // textHover: 'hover:text-teal-500',
 
 
     
-  // background: 'bg-gray-900',
-  // textPrimary: 'text-gray-100',
-  // textSecondary: 'text-gray-400',
-  // accent: 'text-teal-300',
-  // button: 'bg-teal-500 text-white hover:bg-teal-400',
-  // navbarText: 'text-gray-200',
-  // textHover: 'hover:text-teal-300',
+  background: 'bg-gray-900',
+  textPrimary: 'text-gray-100',
+  textSecondary: 'text-gray-400',
+  accent: 'text-teal-300',
+  button: 'bg-teal-500 text-white hover:bg-teal-400',
+  navbarText: 'text-gray-200',
+  textHover: 'hover:text-teal-300',
 
 
 

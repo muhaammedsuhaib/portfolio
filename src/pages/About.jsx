@@ -1,77 +1,72 @@
 import React from 'react';
-import { motion } from 'framer-motion'; // Import framer-motion for animations
+import { motion } from 'framer-motion';
+import { FaUserGraduate, FaCode, FaGlobe } from 'react-icons/fa';
+import colors from '../utils/theam';
 
 const About = () => {
+  
+  const containerVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const itemVariants = {
+    hidden: { opacity: 0, scale: 0.5 },
+    visible: { opacity: 1, scale: 1 },
+  };
+
   return (
-    <motion.div 
-      className="w-full h-screen bg-gray-900 text-white flex flex-col justify-center items-center p-4 md:p-8"
-      initial={{ opacity: 0, y: 20 }} // Initial hidden state
-      animate={{ opacity: 1, y: 0 }}  // Animate to visible
-      transition={{ duration: 1, ease: 'easeOut' }} // Smooth transition
+    <motion.div
+      className={`flex flex-col items-center justify-center min-h-screen p-6 ${colors.background}`}
+      initial="hidden"
+      animate="visible"
+      variants={containerVariants}
+      transition={{ duration: 0.5 }}
     >
-      {/* Title */}
       <motion.h1
-        className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 text-center"
-        initial={{ opacity: 0, scale: 0.8 }} // Initial animation: small and invisible
-        animate={{ opacity: 1, scale: 1 }} // Visible and normal size
-        transition={{ duration: 0.6, ease: 'easeInOut' }}
+        className={`text-3xl font-bold text-center ${colors.accent} mb-6`}
+        variants={itemVariants}
+        transition={{ duration: 0.5, delay: 0.2 }}
       >
         About Me
       </motion.h1>
-
-      {/* Description */}
       <motion.p
-        className="text-base md:text-lg lg:text-xl mb-4 text-center max-w-3xl"
-        initial={{ opacity: 0, x: -50 }} // Initial state: start from the left
-        animate={{ opacity: 1, x: 0 }} // Move to original position
-        transition={{ duration: 0.8, delay: 0.5, ease: 'easeInOut' }}
+        className={`text-lg text-center ${colors.textPrimary} mb-4`}
+        variants={itemVariants}
+        transition={{ duration: 0.5, delay: 0.4 }}
       >
-        Hi! I'm Suhaib, a passionate software developer specializing in **Website Development**. I love creating clean, functional, and interactive websites with a focus on user experience. With experience in the **MERN** stack, I'm proficient in building full-stack applications that are both responsive and dynamic.
+        I am a passionate MERN stack developer with a focus on building modern web applications.
+      </motion.p>
+      <motion.p
+        className={`text-lg text-center ${colors.textPrimary} mb-4`}
+        variants={itemVariants}
+        transition={{ duration: 0.5, delay: 0.6 }}
+      >
+        I love exploring new technologies and constantly improving my skills to deliver high-quality software solutions.
       </motion.p>
 
-      {/* Skills */}
       <motion.div
-        className="text-center mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1, ease: 'easeInOut' }}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8"
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        transition={{ staggerChildren: 0.2 }}
       >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Skills</h2>
-        <ul className="list-disc list-inside text-sm md:text-base">
-          <li>Frontend Development (React.js, HTML, CSS, JavaScript)</li>
-          <li>Backend Development (Node.js, Express.js)</li>
-          <li>Database Management (MongoDB)</li>
-          <li>Version Control (Git, GitHub)</li>
-          <li>Responsive Design (Tailwind CSS, Bootstrap)</li>
-        </ul>
-      </motion.div>
-
-      {/* Projects */}
-      <motion.div
-        className="text-center mb-6"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 1.5, ease: 'easeInOut' }}
-      >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Notable Projects</h2>
-        <ul className="list-disc list-inside text-sm md:text-base">
-          <li>E-Commerce Website (MERN Stack)</li>
-          <li>Staff Management System (React & Node.js)</li>
-          <li>Portfolio Website (React, Tailwind CSS)</li>
-        </ul>
-      </motion.div>
-
-      {/* Contact */}
-      <motion.div
-        className="text-center"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1, delay: 2, ease: 'easeInOut' }}
-      >
-        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-4">Get in Touch</h2>
-        <p className="text-sm md:text-base">
-          If you'd like to collaborate or just want to say hello, feel free to <a href="mailto:muhammedsuhaibpottayil@gmail.com" className="text-yellow-400 hover:text-yellow-300">email me</a>.
-        </p>
+        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+          <FaUserGraduate className={`text-4xl ${colors.accent} mb-2`} />
+          <h3 className={`text-xl font-semibold ${colors.accent}`}>Education</h3>
+          <p className={`text-center ${colors.textSecondary}`}>Bachelor's in Computer Science</p>
+        </motion.div>
+        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+          <FaCode className={`text-4xl ${colors.accent} mb-2`} />
+          <h3 className={`text-xl font-semibold ${colors.accent}`}>Skills</h3>
+          <p className={`text-center ${colors.textSecondary}`}>JavaScript, React, Node.js, MongoDB</p>
+        </motion.div>
+        <motion.div className="flex flex-col items-center" variants={itemVariants}>
+          <FaGlobe className={`text-4xl ${colors.accent} mb-2`} />
+          <h3 className={`text-xl font-semibold ${colors.accent}`}>Vision</h3>
+          <p className={`text-center ${colors.textSecondary}`}>Creating user-centric solutions that make a difference.</p>
+        </motion.div>
       </motion.div>
     </motion.div>
   );
