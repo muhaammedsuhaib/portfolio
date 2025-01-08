@@ -1,25 +1,30 @@
-import React, { useState, useEffect } from "react";
-import AppRouter from "./routes/App.Router";
-import Loading from "./common/Loding";
+import "./App.css";
+import Profile from "./components/Profile";
+import Projects from "./components/Projects";
+import Navbar from "./components/Navbar";
+import { getConfigData } from "./data/configReader";
+import Social from "./components/Social";
+import Footer from "./components/Footer";
+import SiteRoutes from "./routes/SiteRoutes";
 
 function App() {
-  const [loading, setLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, []);
+  const configData = getConfigData();
 
   return (
     <>
-      {loading ? (
-        <Loading />
-      ) : (
-        <AppRouter />
-      )}
+      <Navbar />
+      <div className="pt-[5rem] px-2 py-2">
+        <div className=" w-full mx-auto max-w-5xl bg-white rounded-xl shadow-lg">
+          <div className="flex flex-col">
+            <div className="flex flex-col">
+              <SiteRoutes />
+
+              <Social />
+              <Footer />
+            </div>
+          </div>
+        </div>
+      </div>
     </>
   );
 }

@@ -1,0 +1,67 @@
+{
+  "job": "Software developer",
+  "name": "Suhaib",
+  "desc": "I am a software developer from India, delivering innovative, efficient, and high-impact web solutions.",
+  "aboutDesc": "I am a self-taught software developer with a year of internship experience, currently working as a Junior Software Developer. I focus on creating efficient, scalable, and user-friendly software solutions. With a passion for continuous learning, I am dedicated to staying up-to-date with the latest technologies to deliver high-quality results.",
+  "email": "muhammedsuhaibpottayil@gmail.com",
+  "status": "on",
+  "hireMeLink": "mailto:muhammedsuhaibpottayil@gmail.com",
+  "subDesc": {
+    "heading": "Innovating the Future",
+    "des": "Developing powerful and dependable software solutions."
+  },
+  "aboutSub": {
+    "heading": "Let's Build Together",
+    "des": "Crafting seamless solutions with intuitive design and exceptional functionality."
+  },
+  "projects": [
+    {
+      "project-image-url": "https://frontoffice.brixbull.ai/assets/logoColored-0N4OVanA.png",
+      "project-name": "Brix Pos",
+      "project-desc": "Brix POS is a powerful system for restaurant transactions and inventory.",
+      "project-link":"https://frontoffice.brixbull.ai"
+    },
+    {
+      "project-image-url": "https://bluebir-d.vercel.app/_next/image?url=%2FBrandLogo.png&w=256&q=75",
+      "project-name": "Blue Bird",
+      "project-desc": "Blue Bird is a dynamic social media app for sharing photos and connecting with friends.",
+      "project-link":"https://bluebir-d.vercel.app"
+    },
+    {
+      "project-image-url": "https://todolistify.vercel.app/todolistify.svg",
+      "project-name": "ToDo Listify",
+      "project-desc": "ToDoListify is a task management app for organizing and prioritizing your daily tasks.",
+      "project-link":"https://todolistify.vercel.app"
+    },
+    {
+      "project-image-url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsj969OxAXIdz0f33l_yF02ZyMY5aLHclIA&s",
+      "project-name": "Staff Management",
+      "project-desc": "Bridgeon Solutions uses this system for efficient staff management and operations.",
+      "project-link":"https://staffmanagement.vercel.app/"
+    },
+    {
+      "project-image-url": "https://prolancex.vercel.app/favicon.ico",
+      "project-name": "Pro LanceX",
+      "project-desc": "ProLanceX is a freelancing platform for connecting professionals with clients for various projects.",
+      "project-link":"https://prolancex.vercel.app"
+    }
+  ],
+  "social": [
+    {
+      "icon": "FaXTwitter",
+      "link": "https://x.com/suhai_bb"
+    },
+    {
+      "icon": "FaInstagram",
+      "link": "https://www.instagram.com/suhaii.bb"
+    },
+    {
+      "icon": "FaGithub",
+      "link": "https://github.com/muhaammedsuhaib"
+    },
+    {
+      "icon": "FaLinkedinIn",
+      "link": "https://www.linkedin.com/in/muhammedsuhaib"
+    }
+  ]
+}
