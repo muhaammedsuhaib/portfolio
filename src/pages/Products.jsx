@@ -1,7 +1,9 @@
+import Card from "../components/Product";
+
 export default function Home() {
     return (
         <>
-          <h1>Products</h1>
+          <Card/>
         </>
     )
 }

@@ -8,7 +8,6 @@ export default function Card() {
   const [isHovered, setIsHovered] = useState(false);
   const location = useLocation();
   const currentPath = location.pathname;
-  console.log(currentPath);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -31,28 +30,30 @@ export default function Card() {
               <div className="w-1.5 h-1.5 bg-gray-400 rounded-full"></div>
               Projects
             </div>
-            <Link to={"/projects"}>
-              <button
-                type="button"
-                className="gap-x-2 text-gray-900 bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
-              >
-                View All
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="w-3 h-3"
+            {currentPath === "/" && (
+              <Link to={"/projects"}>
+                <button
+                  type="button"
+                  className="gap-x-2 text-gray-900 bg-white border border-gray-200 hover:border-gray-300 transition-all duration-300 focus:ring-4 focus:ring-gray-100 font-medium rounded-lg text-sm px-3 py-2 text-center inline-flex items-center"
                 >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
-                  />
-                </svg>
-              </button>
-            </Link>
+                  View All
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    strokeWidth="1.5"
+                    stroke="currentColor"
+                    className="w-3 h-3"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+                    />
+                  </svg>
+                </button>
+              </Link>
+            )}
           </div>
           <div className="flex flex-col">
             {currentPath === "/projects"
@@ -63,7 +64,7 @@ export default function Card() {
                     onMouseLeave={handleMouseLeave}
                     className="drop-shadow-md card bg-white rounded-lg px-5 py-3 gap-x-3 flex flex-col md:flex-none md:flex-row hover:-translate-y-1 hover:scale-100 duration-300 transition ease-in-out delay-150 hover:shadow-sm border border-gray-200 hover:border-gray-300"
                     href={project["project-link"]}
-                     target="_blank"
+                    target="_blank"
                   >
                     <div className="rounded-full overflow-hidden flex items-center justify-center border border-gray-200 hidden md:block">
                       <div className="card-image w-16 h-16 rounded-full overflow-hidden">

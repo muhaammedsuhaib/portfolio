@@ -19,31 +19,68 @@
       "project-image-url": "https://frontoffice.brixbull.ai/assets/logoColored-0N4OVanA.png",
       "project-name": "Brix Pos",
       "project-desc": "Brix POS is a powerful system for restaurant transactions and inventory.",
-      "project-link":"https://frontoffice.brixbull.ai"
+      "project-link": "https://frontoffice.brixbull.ai"
     },
     {
       "project-image-url": "https://bluebir-d.vercel.app/_next/image?url=%2FBrandLogo.png&w=256&q=75",
       "project-name": "Blue Bird",
       "project-desc": "Blue Bird is a dynamic social media app for sharing photos and connecting with friends.",
-      "project-link":"https://bluebir-d.vercel.app"
+      "project-link": "https://bluebir-d.vercel.app"
     },
     {
       "project-image-url": "https://todolistify.vercel.app/todolistify.svg",
       "project-name": "ToDo Listify",
       "project-desc": "ToDoListify is a task management app for organizing and prioritizing your daily tasks.",
-      "project-link":"https://todolistify.vercel.app"
+      "project-link": "https://todolistify.vercel.app"
     },
     {
       "project-image-url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsj969OxAXIdz0f33l_yF02ZyMY5aLHclIA&s",
       "project-name": "Staff Management",
       "project-desc": "Bridgeon Solutions uses this system for efficient staff management and operations.",
-      "project-link":"https://staffmanagement.vercel.app/"
+      "project-link": "https://staffmanagement.vercel.app/"
     },
     {
       "project-image-url": "https://prolancex.vercel.app/favicon.ico",
       "project-name": "Pro LanceX",
       "project-desc": "ProLanceX is a freelancing platform for connecting professionals with clients for various projects.",
-      "project-link":"https://prolancex.vercel.app"
+      "project-link": "https://prolancex.vercel.app"
+    }
+  ],
+  "products": [
+    {
+      "products-image-url": "https://frontoffice.brixbull.ai/assets/logoColored-0N4OVanA.png",
+      "products-name": "Brix Pos",
+      "products-desc": "Brix POS is a powerful system for restaurant transactions and inventory.",
+      "products-link": "https://frontoffice.brixbull.ai",
+      "products-price":"100000"
+    },
+    {
+      "products-image-url": "https://bluebir-d.vercel.app/_next/image?url=%2FBrandLogo.png&w=256&q=75",
+      "products-name": "Blue Bird",
+      "products-desc": "Blue Bird is a dynamic social media app for sharing photos and connecting with friends.",
+      "products-link": "https://bluebir-d.vercel.app",
+      "products-price":"50000"
+    },
+    {
+      "products-image-url": "https://todolistify.vercel.app/todolistify.svg",
+      "products-name": "ToDo Listify",
+      "products-desc": "ToDoListify is a task management app for organizing and prioritizing your daily tasks.",
+      "products-link": "https://todolistify.vercel.app",
+      "products-price":"90000"
+    },
+    {
+      "products-image-url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUsj969OxAXIdz0f33l_yF02ZyMY5aLHclIA&s",
+      "products-name": "Staff Management",
+      "products-desc": "Bridgeon Solutions uses this system for efficient staff management and operations.",
+      "products-link": "https://staffmanagement.vercel.app/",
+      "products-price":"40000"
+    },
+    {
+      "products-image-url": "https://prolancex.vercel.app/favicon.ico",
+      "products-name": "Pro LanceX",
+      "products-desc": "ProLanceX is a freelancing platform for connecting professionals with clients for various projects.",
+      "products-link": "https://prolancex.vercel.app",
+      "products-price":"70000"
     }
   ],
   "social": [
