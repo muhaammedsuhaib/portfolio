@@ -47,13 +47,7 @@
     }
   ],
   "products": [
-    {
-      "products-image-url": "https://frontoffice.brixbull.ai/assets/logoColored-0N4OVanA.png",
-      "products-name": "Brix Pos",
-      "products-desc": "Brix POS is a powerful system for restaurant transactions and inventory.",
-      "products-link": "https://frontoffice.brixbull.ai",
-      "products-price":"100000"
-    },
+   
     {
       "products-image-url": "https://bluebir-d.vercel.app/_next/image?url=%2FBrandLogo.png&w=256&q=75",
       "products-name": "Blue Bird",
